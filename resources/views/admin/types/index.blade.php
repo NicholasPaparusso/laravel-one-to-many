@@ -5,6 +5,15 @@
     <h3>
         Gestione dei Types
     </h3>
+    <div>
+        <form action="{{route('admin.types.store')}}" method="POST">
+            @csrf
+            <div class="input-group my-3">
+                <input type="text" name="name" class="form-control" placeholder="Inserisci un nuovo type" aria-label="Recipient's username" aria-describedby="button-addon2">
+                <button class="btn np-btn send" type="submit" id="button-addon2">Invio</button>
+              </div>
+        </form>
+    </div>
     @if (session('message'))
 
     <div class="container d-flex justify-content-center pt-5">
