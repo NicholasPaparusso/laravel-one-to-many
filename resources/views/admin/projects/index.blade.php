@@ -65,7 +65,14 @@
                                 </h3>
                             </div>
                             <div class="edit-discard w-100 px-5 pb-2 d-flex justify-content-around">
-                                @include('widgets.delete',$project)
+                                @include('widgets.delete',
+                                [
+                                'entity' => $project,
+                                'route' => 'projects',
+                                'delete_message' => "Confermi l'eliminazione del progetto: $project->name",
+                                'delete_title' => 'Eliminazione progetto'
+                                ])
+
                                 @include('widgets.info')
                                 @include('widgets.modify')
                             </div>

@@ -7,7 +7,14 @@
     <div class="row">
 
         <div class="col-5 offset-3">
-            @include('widgets.delete',$project)
+            @include('widgets.delete',
+            [
+            'route' => 'projects',
+            'delete_message' => "Confermi l'eliminazione del progetto: $project->name",
+            'delete_title' => 'Eliminazione progetto',
+            'entity' => $project
+
+            ])
             <form class="mt-3" action="{{route('admin.projects.update', $project)}}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')

@@ -4,7 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Str;
+use App\Models\Type;
 class TypeController extends Controller
 {
     /**
@@ -14,7 +15,8 @@ class TypeController extends Controller
      */
     public function index()
     {
-        //
+        $types = Type::all();
+        return view('admin.types.index',compact('types'));
     }
 
     /**
@@ -67,9 +69,21 @@ class TypeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Type $type)
     {
-        //
+        $val_data= $request->validate(
+            [
+                'name' => 'required|unique:types',
+            ]
+            );
+
+            $slug = Str::slug($val_data['name']);
+
+            $val_data['slug'] = $slug;
+
+            $type->update($val_data);
+
+        return redirect()->back()->with('message','Type modificato correttamente');
     }
 
     /**

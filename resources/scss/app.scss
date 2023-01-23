@@ -418,8 +418,59 @@ nav .pagination{
     }
 
     .type{
-
+        border-bottom: 1px solid rgba(173, 216, 230, 0.3);
     }
+}
+
+.type-panel{
+    h3{
+        color: lightblue;
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    .table{
+        border-radius: 10px;
+        background-color: #303030;
+
+        th{
+            color: lightblue;
+            border-bottom: 1px solid rgba(173, 216, 230, 0.3);
+        }
+
+        td{
+            padding: 15px;
+            color: white;
+        }
+
+        tr{
+           border-bottom: 1px solid rgba(173, 216, 230, 0.3)
+        }
+
+        tr:last-of-type{
+            border-bottom: none;
+        }
+
+        .type-name{
+            background-color: #303030;
+            color: white;
+            outline: none;
+            border: none;
+            padding: 5px;
+            &:focus{
+                border: 1px solid rgba(173, 216, 230, 0.3);
+            }
+        }
+        .np-btn.send {
+            background-color: rgb(129, 160, 170);
+            color: white;
+        }
+        .np-btn{
+            background-color: rgb(120, 61, 61);
+            color: white
+        }
+    }
+
 }
 //* types *//
 

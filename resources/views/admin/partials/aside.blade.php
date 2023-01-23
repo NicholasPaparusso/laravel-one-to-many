@@ -24,6 +24,12 @@
                     <i class="fa-solid fa-tags"></i> Types
                 </a>
             </li>
+
+            <li>
+                <a class="aside-link" href="{{route('admin.types.index')}}">
+                    <i class="fa-solid fa-gears"></i> Menage Types
+                </a>
+            </li>
         </ul>
     </nav>
 </aside>

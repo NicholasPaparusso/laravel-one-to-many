@@ -27,7 +27,14 @@
                     <div class=" badge mx-3 {{$project->type?->slug}}"> {{$project->type?->name}}</div>
                     @endif
                     <div class="edit-discard">
-                        @include('widgets.delete', $project)
+                        @include('widgets.delete',
+                        [
+                        'route' => 'projects',
+                        'delete_message' => "Confermi l'eliminazione del progetto: $project->name",
+                        'delete_title' => 'Eliminazione progetto',
+                        'entity' => $project
+
+                        ])
                         @include('widgets.modify')
                         @include('widgets.previous')
                     </div>

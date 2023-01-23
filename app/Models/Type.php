@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Type extends Model
 {
+    protected $fillable = ['name','slug'];
+
     use HasFactory;
 
     public function projects(){
