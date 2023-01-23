@@ -197,7 +197,7 @@ ul{
 .np-card{
 
    &.index-card{
-        height: 350px;
+        max-height: 350px;
         overflow-y: auto;
     }
     cursor: pointer;
@@ -407,5 +407,19 @@ nav .pagination{
 }
 //*badge*//
 
+//* types *//
+.types{
 
+    h1{
+        font-size: 2em;
+        text-align: center;
+        color: lightblue;
+        margin-bottom: 50px;
+    }
+
+    .type{
+
+    }
+}
+//* types *//
 
