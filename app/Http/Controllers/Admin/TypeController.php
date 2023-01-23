@@ -49,7 +49,7 @@ class TypeController extends Controller
 
             $type->create($val_data);
 
-        return redirect()->back()->with('message','Type modificato correttamente');
+        return redirect()->back()->with('message','Type Creato correttamente');
     }
 
     /**
