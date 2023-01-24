@@ -42,13 +42,16 @@
                                 <button class=" mx-2 btn btn-sm np-btn-submit" type="submit" >Cerca</button>
                             </form>
                         </div>
+                        <div>
+
+                        </div>
                     @endauth
 
 
                         <div class="d-flex" aria-labelledby="navbarDropdown">
 
                             <a class="nav-link np-link" href="{{route('admin.home')}}">Admin</a>
-
+                            <span class="nav-link np-link">{{Auth::user()->name}}</span>
                             <a class="nav-link np-link" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}

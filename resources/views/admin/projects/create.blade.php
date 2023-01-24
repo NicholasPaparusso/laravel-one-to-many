@@ -19,7 +19,7 @@
                 @enderror
               </div>
 
-              <div class="mb-3">
+              <div class="mb-2">
                 <label for="name" class="form-label">Categoria</label>
                 <select class="form-select resize" name="type_id" name="name" value="{{old('name')}}" aria-describedby="emailHelp">
                     <option value=""> Selezionare una categoria </option>
@@ -31,6 +31,21 @@
                     value="{{$type->id}}" > {{$type->name}} </option>
                     @endforeach
                 </select>
+              </div>
+
+              <div class="mb-2">
+                    <p class="form-label">Technologys</p>
+                    @foreach ($technologies as  $technology)
+                        <input name="technologies[]"
+                         id="technology{{$loop->iteration}}"
+                         class="mx-2" type="checkbox"
+                         value="{{$technology->id}}"
+                        @if (in_array($technology->id, old('technologies',[])))
+                            checked
+                        @endif
+                         >
+                        <label for="technology{{$loop->iteration}}">{{$technology->name}}</label>
+                    @endforeach
               </div>
 
               <div class="mb-3">
@@ -107,8 +122,8 @@
 <script>
 
 function showImage(event){
-        const tagImage = document.getElementById('show-image');
-        tagImage.src = URL.createObjectURL(event.target.files[0]);
+        const technologyImage = document.getElementById('show-image');
+        technologyImage.src = URL.createObjectURL(event.target.files[0]);
     }
 </script>
 

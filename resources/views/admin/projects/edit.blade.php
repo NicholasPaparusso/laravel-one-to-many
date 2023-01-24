@@ -43,6 +43,22 @@
                 </select>
               </div>
 
+              <div class="mb-2">
+                <p class="form-label">Technologys</p>
+                @foreach ($technologies as  $technology)
+                    <input name="technologies[]"
+                     id="technology{{$loop->iteration}}"
+                     class="mx-2" type="checkbox"
+                     value="{{$technology->id}}"
+                    @if (!$errors->all() && $project->technologies->contains($technology))
+                        checked
+                    @elseif($errors->all() && in_array($technology->id, old('technologies',[])))
+                    @endif
+                     >
+                    <label for="technology{{$loop->iteration}}">{{$technology->name}}</label>
+                @endforeach
+          </div>
+
               <div class="mb-3">
                 <label for="client_name" class="form-label">Cliente</label>
                 <input type="text" class="form-control  @error('client_name') is-invalid @enderror resize" name="client_name"  value="{{old('client_name',$project->client_name)}}"  id="client_name">
@@ -120,8 +136,8 @@
 <script>
 
     function showImage(event){
-            const tagImage = document.getElementById('show-image');
-            tagImage.src = URL.createObjectURL(event.target.files[0]);
+            const technologyImage = document.getElementById('show-image');
+            technologyImage.src = URL.createObjectURL(event.target.files[0]);
         }
     </script>
 

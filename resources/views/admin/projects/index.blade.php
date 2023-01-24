@@ -47,6 +47,7 @@
                                 @if (isset($project->type->id))
                                 <div class="mt-2 badge  {{$project->type?->slug}}"> {{$project->type?->name}}</div>
                                 @endif
+
                             </div>
                             @if (!is_null($project->cover_image))
                             <div class="thumb mt-3">
@@ -76,6 +77,14 @@
                                 @include('widgets.info')
                                 @include('widgets.modify')
                             </div>
+                            @if ($project->technologies)
+                            @forelse ($project->technologies as $technology )
+                                    <p class="my-2 technology"> {{$technology->name}}</p>
+                            @empty
+                                <span>nessun technology presente</span>
+                            @endforelse
+
+                            @endif
                         </div>
 
                 </div>

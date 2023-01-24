@@ -21,13 +21,19 @@
 
             <li>
                 <a class="aside-link" href="{{route('admin.projects.types_project')}}">
-                    <i class="fa-solid fa-tags"></i> Types
+                    <i class="fa-solid fa-tag"></i> Types
                 </a>
             </li>
 
             <li>
                 <a class="aside-link" href="{{route('admin.types.index')}}">
                     <i class="fa-solid fa-gears"></i> Menage Types
+                </a>
+            </li>
+
+            <li>
+                <a class="aside-link" href="{{route('admin.technologies.index')}}">
+                    <i class="fa-solid fa-hashtag"></i> Menage Technology
                 </a>
             </li>
         </ul>

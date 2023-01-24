@@ -5,6 +5,7 @@
 <div class="container-fluid py-5 types">
     <h1>Lista dei progetti nelle rispettive categorie</h1>
     @foreach ($types as $type )
+
         <div class="type py-5 row d-flex flex-column  my-5 ">
             <div class="my-2 badge col-1 offset-5 py-3   {{$type?->slug}}">
                  {{$type?->name}}
@@ -34,10 +35,11 @@
                     </div>
 
             </div>
-                @endforeach
-            </div>
-
+            @endforeach
         </div>
+
+    </div>
+
     @endforeach
 </div>
 @endsection

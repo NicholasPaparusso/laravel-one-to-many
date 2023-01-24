@@ -14,6 +14,16 @@ class Project extends Model
         return $this->belongsTo(Type::class);
     }
 
+    public function technologies(){
+        return $this->belongsToMany(Technology::class);
+    }
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+
+
+
     protected $fillable = ['name','slug','client_name', 'summary' ,'cover_image','image_original_name','type_id'];
 
     public static function generateSlug($string){
